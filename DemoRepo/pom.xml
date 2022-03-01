@@ -103,7 +103,7 @@
 	  <configuration>
   	 <!-- <useFile>false</useFile> -->
 		  <SuiteXmlFiles>
-			  <suiteXmlFile>/src/test/resources/testng.xml</suiteXmlFile>
+			  <suiteXmlFile>${xmlSuiteFileName}</suiteXmlFile>
 			   </SuiteXmlFiles>
 	  </configuration>
         </plugin>
