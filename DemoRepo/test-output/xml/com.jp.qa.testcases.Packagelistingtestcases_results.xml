@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="171.167">
+  <properties />
+  
+  
+            <testcase name="customizedpopup_redirectwithoutflight" time="64.169" classname="com.jp.qa.testcases.Packagelistingtestcases" />
+                <testcase name="customizedpopup_redirectwithflight" time="106.998" classname="com.jp.qa.testcases.Packagelistingtestcases" />
+      
+</testsuite>
