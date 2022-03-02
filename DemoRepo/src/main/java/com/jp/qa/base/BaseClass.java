@@ -64,7 +64,7 @@ public class BaseClass
 	public void extendreport()
 	{
 		extent=new ExtentReports();
-		ExtentSparkReporter reporter =new ExtentSparkReporter("E:\\Eclipse\\Eclipse Projects\\DemoRepo\\target\\surefire-reportsJustPackage_ExtentReport.html");
+		ExtentSparkReporter reporter =new ExtentSparkReporter("E:\\Eclipse\\Eclipse Projects\\DemoRepo\\target\\surefire-reports\\JustPackage_ExtentReport.html");
 		extent.attachReporter(reporter);    //by version 5
 		reporter.config().setTheme(Theme.STANDARD);
 		reporter.config().setDocumentTitle("Automation Report");

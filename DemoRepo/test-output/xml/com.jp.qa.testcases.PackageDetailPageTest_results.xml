@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="251.970">
+  <properties />
+  
+  
+            <testcase name="hotelPopup" time="153.948" classname="com.jp.qa.testcases.PackageDetailPageTest" />
+                <testcase name="guestroomDropdown" time="98.022" classname="com.jp.qa.testcases.PackageDetailPageTest" />
+      
+</testsuite>

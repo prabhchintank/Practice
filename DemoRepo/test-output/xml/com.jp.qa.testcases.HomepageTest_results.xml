@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test"
+           tests="5"
+           failures="0"
+           errors="0"
+           skipped="1"
+           time="272.721">
+  <properties />
+  
+            <testcase name="searchTestWithFlight" time="0.0" classname="com.jp.qa.testcases.HomepageTest">
+          <skipped />
+    </testcase>
+  
+            <testcase name="searchTestWithoutFlight" time="55.992" classname="com.jp.qa.testcases.HomepageTest" />
+                <testcase name="blanksearch" time="16.166" classname="com.jp.qa.testcases.HomepageTest" />
+                <testcase name="searchTestWithFlight" time="98.745" classname="com.jp.qa.testcases.HomepageTest" />
+                <testcase name="homePageTitleTest" time="5.046" classname="com.jp.qa.testcases.HomepageTest" />
+      
+</testsuite>
