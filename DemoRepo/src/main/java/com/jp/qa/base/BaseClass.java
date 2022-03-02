@@ -130,7 +130,6 @@ public class BaseClass
 
 	@AfterMethod
 		public void AfterMethod(ITestResult result) throws IOException {
-
 		    if (result.getStatus() == ITestResult.FAILURE) {
 		    	Reporter.log(Status.FAIL,
 		                MarkupHelper.createLabel(result.getName()
