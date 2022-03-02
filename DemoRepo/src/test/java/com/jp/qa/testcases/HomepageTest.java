@@ -31,7 +31,7 @@ public class HomepageTest extends BaseClass
 	{ 
 		Reporter=extent.createTest("homePageTitleTest");
 		Reporter.log(Status.INFO,"Verifying the title of the Homepage");
-		String title= Homepage.validateHomePageTitle();
+		String title= validateHomePageTitle();
 		Assert.assertEquals(title,"JustPackages","Homepage title not matched");
 		Reporter.log(Status.INFO,"Title of Homepage --"+ title);
 		Thread.sleep(5000);
