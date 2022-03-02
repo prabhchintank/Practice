@@ -40,7 +40,7 @@ public class HomepageTest extends BaseClass
 	@Test(priority=2)
 	public void blanksearch() throws InterruptedException
 	{
-		Reporter=extent.createTest("blanksearch1");
+		Reporter=extent.createTest("blanksearch");
 		String text = "Please select destination city.";
 		Thread.sleep(5000);
 		homepage.searchbuttonclick(); 
