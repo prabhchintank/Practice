@@ -1,11 +1,17 @@
 package com.jp.qa.base;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -20,6 +26,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 //import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -57,7 +64,7 @@ public class BaseClass
 	public void extendreport()
 	{
 		extent=new ExtentReports();
-		ExtentSparkReporter reporter =new ExtentSparkReporter("C:\\Users\\pratikshya\\.jenkins\\workspace\\GitProject\\target\\surefire-reports\\JustPackage_ExtentReport.html");
+		ExtentSparkReporter reporter =new ExtentSparkReporter("E:\\Eclipse\\Eclipse Projects\\DemoRepo\\target\\surefire-reportsJustPackage_ExtentReport.html");
 		extent.attachReporter(reporter);    //by version 5
 		reporter.config().setTheme(Theme.STANDARD);
 		reporter.config().setDocumentTitle("Automation Report");
@@ -107,9 +114,22 @@ public class BaseClass
 		driver.get(prop.getProperty("baseurl")); 
 	}
 	
+	public static String getScreenshot(WebDriver driver, String screenshotName) throws IOException{
+		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		// after execution, you could see a folder "FailedTestsScreenshots"
+		// under src folder
+		String destination = System.getProperty("user.dir") + "/FailedTestsScreenshots/" + screenshotName + dateName
+				+ ".png";
+		File finalDestination = new File(destination);
+		FileUtils.copyFile(source, finalDestination);
+		return destination;
+	}
+	
 
 	@AfterMethod
-		public void AfterMethod(ITestResult result) {
+		public void AfterMethod(ITestResult result) throws IOException {
 
 		    if (result.getStatus() == ITestResult.FAILURE) {
 		    	Reporter.log(Status.FAIL,
@@ -117,6 +137,15 @@ public class BaseClass
 		                        + " Test case FAILED due to below issues:",
 		                        ExtentColor.RED));
 		    	Reporter.fail(result.getThrowable());
+	
+		    	
+		    	
+		    	String screenshotPath = BaseClass.getScreenshot(driver, result.getName());
+		    	Reporter.log(Status.FAIL, (Markup) Reporter.addScreenCaptureFromPath(screenshotPath));
+		    	
+		    	
+		    	
+		    	
 		    } else if (result.getStatus() == ITestResult.SUCCESS) {
 		    	Reporter.log(
 		                Status.PASS,
@@ -128,6 +157,9 @@ public class BaseClass
 		                MarkupHelper.createLabel(result.getName()
 		                        + " Test Case SKIPPED", ExtentColor.ORANGE));
 		    	Reporter.skip(result.getThrowable());
+		    	
+		    	
+		    	
 		    }
 		
 
@@ -140,6 +172,10 @@ public class BaseClass
 		} 
 		//recorder.stop();;	
 	}
+
+	
+	
+
 
 	@AfterTest
 	public void flush()
