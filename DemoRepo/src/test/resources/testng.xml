@@ -14,10 +14,10 @@
 
     <classes>
  	  <class name="com.jp.qa.testcases.HomepageTest"/>
-  	<!--  <class name="com.jp.qa.testcases.PackagelistingTest"/>
+          <class name="com.jp.qa.testcases.PackagelistingTest"/>
   	  <class name="com.jp.qa.testcases.CutomizedpopupTest"/>
  	  <class name="com.jp.qa.testcases.PackageDetailPageTest"/>
-	  <class name="com.jp.qa.testcases.ChangeHotelPopupsTest"/>   -->
+	  <class name="com.jp.qa.testcases.ChangeHotelPopupsTest"/>   
     </classes>
 
   </test> <!-- Test -->
