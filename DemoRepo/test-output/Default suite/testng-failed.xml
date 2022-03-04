@@ -3,18 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.jp.qa.testcases.Homepagetestcases">
+      <class name="com.jp.qa.testcases.GeneralPointsTest">
         <methods>
-          <include name="searchTestWithFlight"/>
           <include name="extendreport"/>
           <include name="browsersetup"/>
-          <include name="searchTestWithoutFlight"/>
-          <include name="blanksearch"/>
           <include name="flush"/>
+          <include name="Cssvalue_searchbtn"/>
           <include name="setup"/>
           <include name="AfterMethod"/>
         </methods>
-      </class> <!-- com.jp.qa.testcases.Homepagetestcases -->
+      </class> <!-- com.jp.qa.testcases.GeneralPointsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

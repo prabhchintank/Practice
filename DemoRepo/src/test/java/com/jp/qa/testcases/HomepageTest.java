@@ -1,4 +1,5 @@
 package com.jp.qa.testcases;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -29,24 +30,30 @@ public class HomepageTest extends BaseClass
 	@Test(priority=1)
 	public void homePageTitleTest() throws InterruptedException
 	{ 
+		JavascriptExecutor javascript = (JavascriptExecutor) driver;                              ///alert handle by js
+		javascript.executeScript("alert('Test Case Execution Is started Now..');");
+		Thread.sleep(2000);
+		driver.switchTo().alert().accept();
+		Thread.sleep(10000);
+		
 		Reporter=extent.createTest("homePageTitleTest");
 		Reporter.log(Status.INFO,"Verifying the title of the Homepage");
 		String title= Homepage.validateHomePageTitle();
-		Assert.assertEquals(title,"JustPackages","Homepage title not matched");
+		Assert.assertEquals(title,"JustPackages","Homepage title not matched");       //Assert equal use
 		Reporter.log(Status.INFO,"Title of Homepage --"+ title);
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 	}
 	
 	@Test(priority=2)
 	public void blanksearch() throws InterruptedException
 	{
 		Reporter=extent.createTest("blanksearch");
-		String text = "Please select destination city.";
+		String text = "Please select destination city.";     //validation message
 		Thread.sleep(5000);
 		homepage.searchbuttonclick(); 
 		Reporter.log(Status.INFO,"Validating message text on the blank input with click on the search  button");
-		Assert.assertTrue(true,text);
-		Reporter.log(Status.PASS, "validation text matched-----" +text);
+		Assert.assertTrue(true,text);							//Assert True used
+		Reporter.log(Status.PASS, "validation text matched----- " +text);
 		Thread.sleep(5000);
 	}
 	
