@@ -93,9 +93,13 @@ public class BaseClass
 		browser=prop.getProperty("browser");  // by config file
 		if(browser.equalsIgnoreCase("firefox"))  // If the browser is Firefox, then do this 
 		{ 
-			WebDriverManager.firefoxdriver().setup();
-
+			System.setProperty("webdriver.gecko.driver","C:\\Webdriver\\geckodriver.exe");   //exe file for firefox will work
 			driver = new FirefoxDriver();
+			driver.manage().timeouts().implicitlyWait(35, TimeUnit.SECONDS);
+			
+	
+		//	WebDriverManager.firefoxdriver().setup();
+			//driver=new FirefoxDriver();
 		}
 		else if (browser.equalsIgnoreCase("chrome")) // If browser is Chrome, then do this	  
 		{ 	
@@ -104,8 +108,7 @@ public class BaseClass
 			//options.addArguments("headless");
 			
 			WebDriverManager.chromedriver().setup();
-
-			driver=new ChromeDriver();     //options text add in bracket when use headless command
+			driver=new ChromeDriver();     //'options' text add in bracket when use headless command
 		}
 		
 		else

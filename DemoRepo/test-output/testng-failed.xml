@@ -7,9 +7,11 @@
         <methods>
           <include name="extendreport"/>
           <include name="browsersetup"/>
+          <include name="homePageTitleTest"/>
           <include name="searchTestWithFlight"/>
           <include name="flush"/>
           <include name="setup"/>
+          <include name="blanksearch"/>
           <include name="searchTestWithoutFlight"/>
           <include name="AfterMethod"/>
         </methods>
