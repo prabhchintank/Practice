@@ -14,6 +14,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -98,16 +99,20 @@ public class BaseClass
 		}
 		else if (browser.equalsIgnoreCase("chrome")) // If browser is Chrome, then do this	  
 		{ 	
+			//ChromeOptions options =new ChromeOptions();
+			//options.addArguments("window-size=1400,800");          //some time this line need or some time not
+			//options.addArguments("headless");
+			
 			WebDriverManager.chromedriver().setup();
 
-			driver=new ChromeDriver();  
+			driver=new ChromeDriver();     //options text add in bracket when use headless command
 		}
 		
 		else
 		{
 			Assert.assertTrue(false,"No browser type sent");
 		}	
-		driver.manage().window().maximize();
+	//	driver.manage().window().maximize();
 		driver.manage().deleteAllCookies(); 
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.Page_load_timeout, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(TestUtil.Page_implicit_Wait, TimeUnit.SECONDS);	
