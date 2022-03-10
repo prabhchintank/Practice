@@ -9,6 +9,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -16,6 +17,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -32,6 +34,7 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 //import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.jp.qa.pages.Homepage;
 import com.qa.jp.util.TestUtil;
 
 //import atu.testrecorder.ATUTestRecorder;
@@ -77,6 +80,22 @@ public class BaseClass
 		extent.attachReporter(reporter);
 		reporter.setAppendExisting(true); 	*/      //   by version 3
 	}
+	
+	/*public static void CheckBrowserOS()
+	{
+	 //Get Browser name and version.
+	
+		Capabilities caps = ((RemoteWebDriver) driver).getCapabilities();
+		String browserName = caps.getBrowserName();
+		@SuppressWarnings("deprecation")
+		String browserVersion = caps.getVersion();
+	  
+		//Get OS name.
+		String os = System.getProperty("os.name").toLowerCase();
+		System.out.println("OS = " + os + ", Browser = " + browserName + ", Browser Version "+ browserVersion);
+	 } */
+	
+	
 
 	@SuppressWarnings("deprecation")
 	@BeforeMethod
@@ -93,6 +112,7 @@ public class BaseClass
 		browser=prop.getProperty("browser");  // by config file
 		if(browser.equalsIgnoreCase("firefox"))  // If the browser is Firefox, then do this 
 		{ 
+		//	TestUtil.CheckBrowserOS();
 			System.setProperty("webdriver.gecko.driver","C:\\Webdriver\\geckodriver.exe");   //exe file for firefox will work
 			driver = new FirefoxDriver();
 			driver.manage().timeouts().implicitlyWait(35, TimeUnit.SECONDS);

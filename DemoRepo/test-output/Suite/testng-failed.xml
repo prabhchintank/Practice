@@ -4,22 +4,69 @@
   <listeners>
     <listener class-name="org.uncommons.reportng.HTMLReporter"/>
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="Analyzer.MyTransformer"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.jp.qa.testcases.Homepagetestcases">
+      <class name="com.jp.qa.testcases.PackageDetailPageTest">
         <methods>
-          <include name="searchTestWithFlight"/>
           <include name="extendreport"/>
           <include name="browsersetup"/>
-          <include name="searchTestWithoutFlight"/>
-          <include name="blanksearch"/>
+          <include name="hotelPopup"/>
           <include name="flush"/>
-          <include name="homePageTitleTest"/>
           <include name="setup"/>
-          <include name="tearDown"/>
+          <include name="guestroomDropdown"/>
+          <include name="AfterMethod"/>
         </methods>
-      </class> <!-- com.jp.qa.testcases.Homepagetestcases -->
+      </class> <!-- com.jp.qa.testcases.PackageDetailPageTest -->
+      <class name="com.jp.qa.testcases.ChangeHotelPopupsTest">
+        <methods>
+          <include name="extendreport"/>
+          <include name="withflight_changeHotel"/>
+          <include name="browsersetup"/>
+          <include name="withoutflight_crossbtn"/>
+          <include name="withflight_crossbtn"/>
+          <include name="setup"/>
+          <include name="flush"/>
+          <include name="withoutflight_changeHotel"/>
+          <include name="AfterMethod"/>
+        </methods>
+      </class> <!-- com.jp.qa.testcases.ChangeHotelPopupsTest -->
+      <class name="com.jp.qa.testcases.HomepageTest">
+        <methods>
+          <include name="extendreport"/>
+          <include name="browsersetup"/>
+          <include name="homePageTitleTest"/>
+          <include name="searchTestWithFlight"/>
+          <include name="flush"/>
+          <include name="setup"/>
+          <include name="blanksearch"/>
+          <include name="searchTestWithoutFlight"/>
+          <include name="AfterMethod"/>
+        </methods>
+      </class> <!-- com.jp.qa.testcases.HomepageTest -->
+      <class name="com.jp.qa.testcases.CutomizedpopupTest">
+        <methods>
+          <include name="extendreport"/>
+          <include name="browsersetup"/>
+          <include name="withflight_poptest"/>
+          <include name="flush"/>
+          <include name="setup"/>
+          <include name="withoutflight_poptest"/>
+          <include name="AfterMethod"/>
+        </methods>
+      </class> <!-- com.jp.qa.testcases.CutomizedpopupTest -->
+      <class name="com.jp.qa.testcases.PackagelistingTest">
+        <methods>
+          <include name="extendreport"/>
+          <include name="customizedpopup_redirectwithoutflight"/>
+          <include name="browsersetup"/>
+          <include name="customizedpopup_redirectwithflight"/>
+          <include name="setup"/>
+          <include name="flush"/>
+          <include name="AfterMethod"/>
+        </methods>
+      </class> <!-- com.jp.qa.testcases.PackagelistingTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

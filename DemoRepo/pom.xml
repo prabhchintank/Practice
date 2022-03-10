@@ -5,6 +5,17 @@
 	  <version>0.0.1-SNAPSHOT</version>
 	  <name>JP Project</name>
 
+
+<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+ <maven.compiler.source>1.6</maven.compiler.source>
+                  <maven.compiler.target>1.6</maven.compiler.target>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+</properties>
+
+
+
 	<dependencies>
 
 	<!-- https://mvnrepository.com/artifact/org.testng/testng -->
@@ -79,6 +90,8 @@
 	</dependency>
 
 </dependencies>
+
+
 
 	<build>
     <pluginManagement>
