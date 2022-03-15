@@ -66,9 +66,17 @@ public class GeneralPointsTest extends BaseClass
 		Thread.sleep(5000);
 		Reporter.log(Status.PASS,"CSS Values get for search button");
 		Thread.sleep(5000);
-	
-	
 	}
+	
+	@Test(priority=5)
+	public void details()
+	{
+		Reporter=extent.createTest("Basic details");
+		Reporter.log(Status.INFO, "Verifying the basic details");
+		General.CheckBrowserOS();
+	}
+	
+	
 }
 	
 	

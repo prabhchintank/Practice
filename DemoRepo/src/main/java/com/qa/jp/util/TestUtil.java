@@ -14,18 +14,6 @@ public class TestUtil extends BaseClass
 		
 		
 		
-		/*public static void CheckBrowserOS()
-		{
-		 //Get Browser name and version.
-		
-			Capabilities caps = ((RemoteWebDriver) driver).getCapabilities();
-			String browserName = caps.getBrowserName();
-			@SuppressWarnings("deprecation")
-			String browserVersion = caps.getVersion();
-		  
-			//Get OS name.
-			String os = System.getProperty("os.name").toLowerCase();
-			System.out.println("OS = " + os + ", Browser = " + browserName + ", Browser Version "+ browserVersion);
-		 } */
+	
 		
 }

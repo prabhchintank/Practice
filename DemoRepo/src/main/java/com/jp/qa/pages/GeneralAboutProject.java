@@ -1,8 +1,10 @@
 package com.jp.qa.pages;
 
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -53,8 +55,24 @@ public class GeneralAboutProject extends BaseClass
 		String align = Search_button.getCssValue("text-align");
 		Reporter.log(Status.PASS, "Successfully get the alignment--- " +align);
 		return align;
-		
-		
-	
 	}
+	
+	public void CheckBrowserOS()
+	{
+	 //Get Browser name and version.
+	
+		Capabilities caps = ((RemoteWebDriver) driver).getCapabilities();
+		String browserName = caps.getBrowserName();
+		@SuppressWarnings("deprecation")
+		String browserVersion = caps.getVersion();
+	  
+		//Get OS name.
+		String os = System.getProperty("os.name").toLowerCase();
+		System.out.println("OS = " + os + ", Browser = " + browserName + ", Browser Version "+ browserVersion);	
+		Reporter.log(Status.PASS, "OS = " + os + ", Browser = " + browserName + ", Browser Version "+ browserVersion);
+	 } 
+	
+	
+	
+	
 }

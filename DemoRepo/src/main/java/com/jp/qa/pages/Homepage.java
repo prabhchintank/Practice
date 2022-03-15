@@ -44,7 +44,7 @@ public class Homepage extends BaseClass
 	@FindBy(name ="trip_type")
 	WebElement Trip_type;
 	    
-	@FindBy(css ="#current > app-home > app-banner > section > div > div.tour-search.tour-wrapper2 > div > app-search > div > div > form > div > div.col-item.search--bar.align-self > div > button")
+	@FindBy(css ="#current > app-home > app-banner > section > div > div.tour-search.tour-wrapper2 > div > app-search > div > form > div > div:nth-child(5) > input")
 	WebElement Search_button;
 	    
 	//Initializing the objects
