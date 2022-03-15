@@ -135,7 +135,7 @@ public class BaseClass
 		{
 			Assert.assertTrue(false,"No browser type sent");
 		}	
-	//	driver.manage().window().maximize();
+		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies(); 
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.Page_load_timeout, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(TestUtil.Page_implicit_Wait, TimeUnit.SECONDS);	
