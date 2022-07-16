@@ -20,7 +20,7 @@ public class App
 //      System.out.println( "Hello World!" );
 //     
         Xls_Reader reader= new Xls_Reader("E:\\Eclipse\\Eclipse Projects\\TestingProject\\src\\main\\java\\com\\testData\\newxg.xlsx"); 
-        String name="Sample";   /// sheet name under excel file must be same
+        String name="Sample";      /// sheet name under excel file must be same  test
       
       String data = reader.getCellData(name, 2, 2);   //sheet name, row, column     
      System.out.println("My data "+ data);
